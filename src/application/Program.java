@@ -17,13 +17,19 @@ public class Program {
 		System.out.println("###TESTING###");
 		System.out.println(seller);
 		
+		System.out.println("\n###################");	
 		Department dep = new Department(2, null);			
 		List<Seller> list = sellerDao.findByDepartment(dep);
 			for(Seller obj: list) {
 			System.out.println(obj);
+			
+			System.out.println("\n###################");	
+			list = sellerDao.findAll();
+				for(Seller all: list) {
+				System.out.println(all);	
 		}
 		
 
 	}
-
-}
+	}
+	}
