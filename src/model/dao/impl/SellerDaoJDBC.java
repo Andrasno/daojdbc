@@ -84,7 +84,16 @@ PreparedStatement stmt = null;
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement("DELETE FROM seller WHERE Id = ?");
+			
+			stmt.setInt(1, id);
+		}catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeStatement(stmt);
+		}
 
 	}
 
